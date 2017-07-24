@@ -104,7 +104,7 @@ class CorsBehavior extends CBehavior
     {
         if (is_array($origin)) {
         	foreach( $origin as $o) {
-        		$this->checkAllowedOrigin($o);
+        		$this->validateAllowedOrigin($o);
 	        }
         }
     	elseif (!is_string($origin))
@@ -151,7 +151,7 @@ class CorsBehavior extends CBehavior
             return false;
         }
         
-		else return $origin;
+		else return $headers['origin'];
         
     }
     
